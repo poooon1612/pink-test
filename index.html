@@ -1,148 +1,125 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!--
+🎨 WebAR 学習テンプレート Ver.1.0
+
+このテンプレートは
+「作品を画像認識して説明を表示する」
+ための学習用テンプレート。
+
+作品ごとに主に変更する場所
+・title
+・targets.mind
+・value（練習時）
+・画像・動画ファイル名
+・position
+・rotation
+・scale
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- ======================================== -->
+<!-- 🏠 第2章　head（裏方スタッフ） -->
+<!-- 展示を始める前の準備をする場所 -->
+<!-- 基本は変更しません -->
+<!-- ======================================== -->
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Hiragino Sans'; -webkit-text-stroke: #000000}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; -webkit-text-stroke: #000000}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px Courier; -webkit-text-stroke: #000000; min-height: 16.0px}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px 'Apple Color Emoji'; font-kerning: none}
-    span.s3 {font: 12.0px 'Hiragino Sans'; font-kerning: none}
-    span.s4 {font: 12.0px Helvetica; font-kerning: none}
-  </style>
+
+  <!-- 🌏 世界中の文字（日本語・英語・絵文字）を使えるようにする -->
+  <meta charset="UTF-8">
+
+  <!-- 📱 iPhoneやAndroidの画面サイズに合わせる -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 🏷️ ブラウザのタブに表示される作品名 -->
+  <title>Pink AR Test</title>
+
+  <!-- ======================================== -->
+  <!-- 🔌 第3章　ARのエンジンを読み込む -->
+  <!-- 基本は変更しません -->
+  <!-- ======================================== -->
+
+  <!-- 🎨 A-Frame（AR空間を作る） -->
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+  <!-- 📷 MindAR（作品画像を認識する） -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
 </head>
+
 <body>
-<p class="p1"><span class="s1">&lt;!--</span></p>
-<p class="p1"><span class="s1">🎨 WebAR 学習テンプレート Ver.1.0</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">このテンプレートは</span></p>
-<p class="p1"><span class="s1">「作品を画像認識して説明を表示する」</span></p>
-<p class="p1"><span class="s1">ための学習用テンプレート。</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">作品ごとに主に変更する場所</span></p>
-<p class="p1"><span class="s1">・title</span></p>
-<p class="p1"><span class="s1">・targets.mind</span></p>
-<p class="p1"><span class="s1">・value（練習時）</span></p>
-<p class="p1"><span class="s1">・画像・動画ファイル名</span></p>
-<p class="p1"><span class="s1">・position</span></p>
-<p class="p1"><span class="s1">・rotation</span></p>
-<p class="p1"><span class="s1">・scale</span></p>
-<p class="p1"><span class="s1">--&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="ja"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!-- ======================================== --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;!-- </span><span class="s2">🏠</span><span class="s1"> </span><span class="s3">第</span><span class="s1">2</span><span class="s3">章　</span><span class="s1">head</span><span class="s3">（裏方スタッフ）</span><span class="s1"> --&gt;</span></p>
-<p class="p3"><span class="s4">&lt;!-- </span><span class="s1">展示を始める前の準備をする場所</span><span class="s4"> --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;!-- </span><span class="s3">基本は変更しません</span><span class="s1"> --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;!-- ======================================== --&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s2">🌏</span><span class="s4"> </span><span class="s1">世界中の文字（日本語・英語・絵文字）を使えるようにする</span><span class="s4"> --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s2">📱</span><span class="s1"> iPhone</span><span class="s3">や</span><span class="s1">Android</span><span class="s3">の画面サイズに合わせる</span><span class="s1"> --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s2">🏷️</span><span class="s4"> </span><span class="s1">ブラウザのタブに表示される作品名</span><span class="s4"> --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Pink AR Test&lt;/title&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s2">🔌</span><span class="s1"> </span><span class="s3">第</span><span class="s1">3</span><span class="s3">章　</span><span class="s1">AR</span><span class="s3">のエンジンを読み込む</span><span class="s1"> --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s3">基本は変更しません</span><span class="s1"> --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s2">🎨</span><span class="s1"> A-Frame</span><span class="s3">（</span><span class="s1">AR</span><span class="s3">空間を作る）</span><span class="s1"> --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://aframe.io/releases/1.4.2/aframe.min.js"&gt;&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s2">📷</span><span class="s1"> MindAR</span><span class="s3">（作品画像を認識する）</span><span class="s1"> --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"&gt;&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span>&lt;!-- 🏛 第4章　AR展示室 --&gt;</span></p>
-<p class="p4"><span class="s1"><span class="Apple-converted-space"> </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p5"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s2">🚪</span><span class="s4"> </span><span class="s1">第</span><span class="s4">5</span><span class="s1">章　来場者の入口（カメラ）</span><span class="s4"> --&gt;</span></p>
-<p class="p3"><span class="s4"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s1">スマホのカメラを使って作品を探します</span><span class="s4"> --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- </span><span class="s3">基本は変更しません</span><span class="s1"> --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;a-scene</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>mindar-image="imageTargetSrc: targets.mind;"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color-space="sRGB"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>renderer="colorManagement: true;"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>vr-mode-ui="enabled: false"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>device-orientation-permission-ui="enabled: true"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- 🖼 第6章　作品を認識したら置くもの --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Blenderでいうオブジェクト追加 --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;a-entity mindar-image-target="targetIndex: 0"&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- 💬 第7章　最初の表示テスト --&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- ======================================== --&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;a-text</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>value="HELLO!"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color="white"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>align="center"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>position="0 0 0"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>width="2"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&gt;&lt;/a-text&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/a-entity&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/a-scene&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!-- ======================================== --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;!-- 📚 A-Frame早見表（人間用メモ） --&gt;</span></p>
-<p class="p1"><span class="s1">&lt;!-- ======================================== --&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;!--</span></p>
-<p class="p1"><span class="s1">📦 よく使うタグ</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;a-text&gt; <span class="Apple-converted-space">  </span>→ 文字</span></p>
-<p class="p1"><span class="s1">&lt;a-image&gt;<span class="Apple-converted-space">  </span>→ 画像</span></p>
-<p class="p1"><span class="s1">&lt;a-video&gt;<span class="Apple-converted-space">  </span>→ 動画</span></p>
-<p class="p1"><span class="s1">&lt;a-plane&gt;<span class="Apple-converted-space">  </span>→ 板</span></p>
-<p class="p1"><span class="s1">&lt;a-box&gt;<span class="Apple-converted-space">    </span>→ 箱</span></p>
-<p class="p1"><span class="s1">&lt;a-sphere&gt; → 球</span></p>
-<p class="p1"><span class="s1">&lt;a-entity&gt; → グループ</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">🎛 よく使う設定</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">value<span class="Apple-converted-space">      </span>→ 表示内容</span></p>
-<p class="p1"><span class="s1">src<span class="Apple-converted-space">        </span>→ 読み込む画像・動画</span></p>
-<p class="p1"><span class="s1">position <span class="Apple-converted-space">  </span>→ 位置</span></p>
-<p class="p1"><span class="s1">rotation <span class="Apple-converted-space">  </span>→ 回転</span></p>
-<p class="p1"><span class="s1">scale<span class="Apple-converted-space">      </span>→ 大きさ</span></p>
-<p class="p1"><span class="s1">color<span class="Apple-converted-space">      </span>→ 色</span></p>
-<p class="p1"><span class="s1">width<span class="Apple-converted-space">      </span>→ 横幅</span></p>
-<p class="p1"><span class="s1">height <span class="Apple-converted-space">    </span>→ 高さ</span></p>
-<p class="p1"><span class="s1">--&gt;</span></p>
+
+ <!-- ======================================== -->
+ <!-- 🏛 第4章　AR展示室 -->
+ <!-- ======================================== -->
+
+  <!-- ======================================== -->
+  <!-- 🚪 第5章　来場者の入口（カメラ） -->
+  <!-- スマホのカメラを使って作品を探します -->
+  <!-- 基本は変更しません -->
+  <!-- ======================================== -->
+
+  <a-scene
+    mindar-image="imageTargetSrc: targets.mind;"
+    color-space="sRGB"
+    renderer="colorManagement: true;"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: true">
+
+  <!-- ======================================== -->
+  <!-- 🖼 第6章　作品を認識したら置くもの -->
+  <!-- Blenderでいうオブジェクト追加 -->
+  <!-- ======================================== -->
+
+    <a-entity mindar-image-target="targetIndex: 0">
+
+    <!-- ======================================== -->
+    <!-- 💬 第7章　最初の表示テスト -->
+    <!-- ======================================== -->
+
+      <a-text
+        value="HELLO!"
+        color="white"
+        align="center"
+        position="0 0 0"
+        width="2"
+      ></a-text>
+
+    </a-entity>
+
+  </a-scene>
+
 </body>
+
 </html>
+
+
+<!-- ======================================== -->
+<!-- 📚 A-Frame早見表（人間用メモ） -->
+<!-- ======================================== -->
+
+<!--
+📦 よく使うタグ
+
+<a-text>   → 文字
+<a-image>  → 画像
+<a-video>  → 動画
+<a-plane>  → 板
+<a-box>    → 箱
+<a-sphere> → 球
+<a-entity> → グループ
+
+🎛 よく使う設定
+
+value      → 表示内容
+src        → 読み込む画像・動画
+position   → 位置
+rotation   → 回転
+scale      → 大きさ
+color      → 色
+width      → 横幅
+height     → 高さ
+-->
