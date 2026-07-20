@@ -12,27 +12,30 @@
 
 <body>
 
-  <a-scene
+<a-scene
   mindar-image="imageTargetSrc: ./targets.mind;"
-  >
+>
+
+  <a-assets>
+
+    <img id="caption" src="./pinktestqr.png">
+
+  </a-assets>
 
   <a-camera position="0 0 0"></a-camera>
 
+  <a-entity mindar-image-target="targetIndex:0">
 
-    <a-entity mindar-image-target="targetIndex:0">
+    <a-image
+      src="#caption"
+      position="0 0 0"
+      width="1"
+      height="1">
+    </a-image>
 
-      <a-image
-        src="pinktestqr.png"
-        position="0 0 0"
-        width="1"
-        height="1"
-    ></a-image>
+  </a-entity>
 
-    </a-entity>
-
-
-  </a-scene>
-
+</a-scene>
 
 </body>
 
