@@ -38,12 +38,24 @@
     src="#movie"
     position="0 0 0"
     rotation="0 0 0"
-    width="3"
+    width="1.68"
     height="3"
    </a-video>
   </a-entity>
 
 </a-scene>
+
+<script>
+
+const video = document.querySelector("#movie");
+
+document.querySelector("a-scene").addEventListener("targetFound", () => {
+
+  video.play();
+
+});
+
+</script>
 
 </body>
 
