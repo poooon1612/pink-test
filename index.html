@@ -18,28 +18,21 @@
 
   <a-assets>
 
-    <video
-    id="movie"
-    src="./0001-0250.mp4"
-    loop
-    muted
-    playsinline
-    webkit-playsinline
-    crossorigin="anonymous">
-    </video>
+    <img id="caption" src="./pinktestqr.png">
 
   </a-assets>
 
   <a-camera position="0 0 0"></a-camera>
 
   <a-entity mindar-image-target="targetIndex:0">
-    <a-video
-    src="#movie"
-    position="0 0 0"
-    rotation="0 0 0"
-    width="1"
-    height="1">
-   </a-video>
+
+    <a-image
+      src="#caption"
+      position="0 0 0"
+      width="1"
+      height="1">
+    </a-image>
+
   </a-entity>
 
 </a-scene>
