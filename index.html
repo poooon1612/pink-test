@@ -47,15 +47,11 @@
 
 <script>
 
-const video = document.querySelector("#movie");
+const scene = document.querySelector("a-scene");
 
-const target =
-document.querySelector("[mindar-image-target]");
+scene.addEventListener("loaded", () => {
 
-target.addEventListener("targetFound", () => {
-
-  console.log("見つけた！");
-  video.play();
+  console.log("Scene OK");
 
 });
 
